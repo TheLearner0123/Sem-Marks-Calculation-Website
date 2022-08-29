@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INTERNAL MARKS CALCULATION</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            color: #fff;
+            background-color: black;
+            box-sizing: border-box;
+            width: 100vw;
+            height: 100vh;
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        h2 {
+            transition: 0.5s ease-in-out;
+            /* position: relative; */
+            /* z-index: 2; */
+            font-size: 30px;
+        }
+
+        header {
+            padding-top: 30px;
+            color: aliceblue;
+            width: 100vw;
+            /* background-color: bisque; */
+            display: flex;
+            flex-wrap: wrap;
+            flex-shrink: initial;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        header:hover {
+            color: rgb(255, 255, 0);
+        }
+
+        header ul li a:hover {
+            color: rgb(255, 255, 0);
+        }
+
+        header ul {
+            display: flex;
+            flex-direction: row;
+            flex-shrink: initial;
+            /* flex-wrap:wrap; */
+            text-align: center;
+            /* margin-left:100px; */
+            list-style: none;
+        }
+
+        @media only screen and (max-width: 480px) {
+
+
+            header {
+                margin-left: 10px;
+                margin-right: -20px;
+                transform: scale(0.8);
+                padding-top: 30px;
+                color: aliceblue;
+                width: 100vw;
+                /* background-color: bisque; */
+                display: flex;
+                flex-wrap: wrap;
+                flex-shrink: initial;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-around;
+            }
+
+            header ul {
+                /* font-size: smaller; */
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                flex-shrink: initial;
+                /* flex-wrap:wrap; */
+                text-align: center;
+                /* margin-left:100px; */
+                list-style: none;
+            }
+
+            header ul li {
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                margin-right: -15px;
+            }
+
+            .first {
+                margin-left: 10px;
+                margin-right: -20px;
+                transform: scale(0.8);
+                justify-content: center;
+                text-align: center;
+                align-items: center;
+            }
+
+            .second input {
+                width: 100px;
+                height: 50px;
+            }
+
+        }
+
+        header ul li {
+            padding: 0px 15px;
+            margin-left: 20px;
+        }
+
+        header ul li a {
+            transition: 0.5s ease-in-out;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .first {
+            flex-wrap: wrap;
+            flex-shrink: initial;
+            text-align: center;
+            align-items: center;
+            justify-content: space-evenly;
+            margin-top: 100px;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .second {
+            border-radius: 25px;
+            text-align: center;
+            align-items: center;
+            justify-content: space-evenly;
+            width: 500px;
+            height: 500px;
+            padding: 30px;
+            box-shadow: 82px 0px 22px rgb(255, 255, 0);
+            /* border: 2px solid rgb(255, 255, 0); */
+            /* background-color: crimson; */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .second input {
+            /* box-shadow: inset 1px 1px 1px rgb(96, 92, 92); */
+            border-radius: 5px;
+            /* margin: 50px 30px; */
+            width: 300px;
+            height: 50px;
+            text-align: center;
+            /* padding: 10px 50px; */
+            border: 2px solid rgb(255, 255, 0);
+            box-shadow: inset 0 0 1px -1px rgb(255, 255, 0);
+            background: rgb(234, 239, 204);
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        .second input:hover {
+            background-color: rgb(255, 252, 82);
+        }
+
+        .second button {
+            /* border: 2px solid cyan; */
+            /* box-shadow:inset 0 0 1px 1px cyan; */
+            background: rgb(255, 255, 0);
+            color: black;
+            /* margin: 20px; */
+            border-radius: 5px;
+            width: 300px;
+            height: 55px;
+            /* padding: 17px 30px; */
+            /* animation: irst 15s infinite; */
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        button:active {
+            transform: scale(0.97);
+        }
+
+        button:hover {
+            background-color: rgb(255, 255, 130);
+            ;
+            cursor: pointer;
+        }
+
+        :focus {
+            outline: none;
+            box-shadow: inset 0 0 1px -1px rgb(255, 255, 0);
+        }
+
+        h1::first-letter {
+            color: rgb(255, 255, 0);
+            font-size: 100px;
+            /* animation: first 15s infinite; */
+        }
+
+        h1::first-letter::selection {
+            background-color: rgb(255, 255, 0);
+            color: black;
+        }
+
+        ::selection {
+            background-color: rgb(255, 255, 0);
+            color: black;
+        }
+
+        #reset {
+            z-index: 2;
+        }
+        a:is(:link, :active, :visited).active {
+            color: rgb(255, 255, 255);
+            border-radius: 5px;
+            border-bottom: 3px solid rgb(255, 255, 0);
+        }
+
+        .loader_bg {
+            position: fixed;
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            /* opacity: 60%; */
+            background-color: #fff;
+            width: 100%;
+            height: 100%;
+        }
+
+        .loader {
+            /* position: absolute; */
+            border: 10px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 10px solid #ffee00;
+            width: 80px;
+            height: 80px;
+            /* -webkit-animation: spin 2s linear infinite; */
+            /* Safari */
+            animation: spin 2s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="loader_bg">
+        <div class="loader"></div>
+        <span></span>
+    </div>
+    <header>
+        <h2>ORG.RESULT</h2>
+        <ul>
+            <li><a class="active" href="org.html">HOME</a></li>
+            <li><a href="calculator.html">MORE</a></li>
+            <li><a href="aboutus.html">ABOUT US</a></li>
+            <li><a href="contact.html">CONTACT US</a></li>
+        </ul>
+    </header>
+
+    <div class="first">
+        <div class="h">
+            <h1>"CALCULATE YOUR<br>INTERNAL MARKS HERE"</h1>
+        </div>
+        <div class="second" name="new">
+            IA1 MARKS <input type="text" name="IA" class="inpu" id="ia1">
+            IA2 MARKS <input type="text" name="IA" class="inpu" id="ia2">
+            IA3 MARKS <input type="text" name="IA" class="inpu" id="ia3"><br><br>
+
+
+            TOTAL <input type="text" name="total" id="total">
+            AVERAGE <input type="text" name="average" id="average"><br>
+            <br><button onclick="FindTotal()">CALCULATE</button>
+            <br><button onclick="cclear()" id="reset">CLEAR</button>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        function FindTotal() {
+            var arr = document.getElementsByName('IA');
+            var tot = 0;
+            for (var i = 0; i < arr.length; i++) {
+                if (parseInt(arr[i].value))
+                    tot += parseInt(arr[i].value);
+                var average = tot / 3;
+            }
+            document.getElementById('total').value = tot;
+            document.getElementById('average').value = average;
+        }
+        function cclear() {
+            document.getElementById('ia1').value = "";
+            document.getElementById('ia2').value = "";
+            document.getElementById('ia3').value = "";
+            document.querySelector('#total').value = "";
+            document.querySelector('#average').value = "";
+        }
+        setTimeout(function(){
+            $('.loader_bg').fadeToggle();
+        }, 800
+        );
+    </script>
+</body>
+
+</html>
