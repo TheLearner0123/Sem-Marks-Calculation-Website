@@ -143,8 +143,8 @@
             /* padding: 40px; */
             display: flex;
             flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: flex-start;
+            /* flex-wrap: wrap; */
+            justify-content: left;
             align-items: center;
             text-align: left;
             /* background-color: blanchedalmond; */
@@ -296,7 +296,54 @@
             color: rgb(255, 255, 0);
         }
 
-        @media only screen and (max-width: 480px) {
+        .nm {
+            display: flex;
+            flex-direction: row;
+        }
+
+        @media only screen and (min-device-width: 830px) and (max-device-width: 1425px) {
+            .firstdiv {
+                transform: scale(0.9);
+            }
+
+            form {
+                flex-direction: row;
+                justify-content: left;
+                align-items: center;
+                text-align: left;
+            }
+            .nm{
+                margin-right: 50px;
+            }
+            .nm a {
+                font-size: 10px;
+            }
+        }
+       
+
+        @media only screen and (min-device-width: 481px) and (max-width: 829px) {
+            .firstdiv {
+                transform: scale(0.9);
+            }
+
+            form {
+                flex-direction: column;
+                justify-content:space-evenly;
+                align-items: center;
+                text-align: left;
+            }
+            .or {
+                transform: scale(0.7);
+                margin: 10px;
+            }
+
+            .nm {
+                flex-direction: row;
+                margin-top: 20px;
+            }
+        }
+
+        @media only screen and (max-width: 637px) {
             header {
                 margin-left: 30px;
                 margin-right: 0px;
@@ -313,6 +360,27 @@
                 align-items: center;
                 text-align: center;
                 justify-content: space-around;
+            }
+
+            form {
+                margin-right: 40px;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+            }
+
+            .or {
+                transform: scale(0.7);
+                margin: 10px;
+            }
+
+            .nm {
+                flex-direction: column;
+                margin-top: 20px;
+            }
+            .nm a{
+                margin-top: 10px;
             }
 
             h2 {
@@ -484,10 +552,10 @@
 </head>
 
 <body>
-    <div class="loader_bg">
+    <!-- <div class="loader_bg">
         <div class="loader"></div>
         <span></span>
-    </div>
+    </div> -->
     <header>
         <h2>ORG.RESULT</h2>
         <ul>
@@ -548,7 +616,9 @@
                     class="fa-solid fa-code-branch"></i></a>
         </div>
     </footer>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+        integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script defer>
         function l() {
             var m = document.getElementById('c');
@@ -556,10 +626,10 @@
             // m.addEventListener('mouseOut' ,alert('Try the direct links'));
 
         }
-        setTimeout(function(){
-            $('.loader_bg').fadeToggle();
-        }, 1500
-        );
+        // setTimeout(function () {
+        //     $('.loader_bg').fadeToggle();
+        // }, 1500
+        // );
     </script>
 </body>
 
